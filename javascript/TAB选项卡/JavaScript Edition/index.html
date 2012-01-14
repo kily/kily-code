@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tab</title>
+	<style type="text/css">
+		* { margin:0; padding:0; }
+		body { padding:50px; font:12px Arial; }
+		ul,ol { list-style:none; }
+
+		.tab { width:300px; margin-bottom:20px; }
+		.tab li { display:inline; }
+		.tab li a { padding:0 1em; line-height:12px; background:#eee;
+			margin-right:5px; text-decoration:none; }
+		.tabCon { border:1px solid #ccc; }
+
+		.tab .current { background:#000; color:#fff; }
+		.tab .curr,.curr { background:#fc0;}
+
+
+	</style>
+</head>
+<body>
+	<div id="Tab" class="tab">
+		<ul id="tabBtn">
+			<li>
+				<a href="javascript:;">tab1</a>
+			</li>
+			<li>
+				<a href="javascript:;">tab2</a>
+			</li>
+			<li>
+				<a href="javascript:;">tab3</a>
+			</li>
+		</ul>
+		<div id="tabCon" class="tabCon">
+			<div class="c1">
+				<div>con1</div>
+				<div>innerCon</div>
+			</div>
+			<div>con2</div>
+			<div class="c3">con3</div>
+		</div>
+	</div>
+	<div id="Tab1" class="tab">
+		<ul>
+			<li>
+				<a href="javascript:;">tab1</a>
+			</li>
+			<li>
+				<a href="javascript:;">tab2</a>
+			</li>
+			<li>
+				<a href="javascript:;">tab3</a>
+			</li>
+			<li>
+				<a href="javascript:;">tab4</a>
+			</li>
+		</ul>
+		<div class="tabCon">
+			<div>con1</div>
+			<div>con2</div>
+			<div>con3</div>
+			<div>con4</div>
+		</div>
+	</div>
+<div id="yourTab">
+	<ul>
+		<li><a href="javascript:;">tab1</a></li>
+		<li><a href="javascript:;">tab2</a></li>
+		<li><a href="javascript:;">tab3</a></li>
+	</ul>	
+	<div>
+		<div>con1</div>
+		<div>con2</div>
+		<div>con3</div>
+	</div>
+</div>
+	<script src="tab.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+	var a = new Tab({
+		wrapper: "Tab",
+		tbCurrClass: "current",
+		evtType: "click",
+		showWhich: 2
+	}).init();
+
+	var b = new Tab({
+		wrapper: "Tab1",
+		tbCurrClass: "curr",
+		showWhich: 3,
+		evtType : "mouseover"
+	}).init();
+	var c = new Tab({
+		wrapper: "yourTab",
+		tbCurrClass: "curr",
+		evtType : "mouseover"
+	}).init();
+
+
+	//]]>	
+	</script>
+</body>
+</html>

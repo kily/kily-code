@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	* { margin:0; padding:0; }
+	body { font:12px/12px arial; }
+	li { list-style:none; }
+
+	#Tab,#Tab1,#Tab2,#Tab3,#img,p { width:300px; margin:20px 50px; }
+	.tabs a { text-decoration:none; padding:0 10px; }
+	.btnCurr { background:#000; color:#fff; }
+	.conCurr { border:3px solid #000; padding:10px; }
+	.tabs li { display:inline; }
+
+	#img { width:}
+	#img { width:600px; border:1px solid #000; height:200px; position:relative; overflow:hidden; }
+	.imglist { width:500px; overflow:hidden; }
+	.holder { position:absolute; right:0; top:0; z-index:1000; width:100px; }
+	.holder a { height:40px; line-height:40px; display:block; padding:0 10px; border:1px solid #fc0; }
+	.holder .holderCurr { border-color:#000; }
+	</style>
+</head>
+<body>
+
+<p>Emm~Also you can make change^!^</p>
+<div id="img">
+	<ul class="holder">
+		<li><a href="javascript:;">btn1</a></li>
+		<li><a href="javascript:;">btn2</a></li>
+		<li><a href="javascript:;">btn3</a></li>
+	</ul>
+	<div class="imglist">
+		<div><img src="img1.jpg" alt=""></div>
+		<div><img src="img2.jpg" alt=""></div>
+		<div><img src="img3.jpg" alt=""></div>
+	</div>
+</div>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jQuery.tabSwitch.slider.js"></script>
+<script type="text/javascript">
+$(function() {
+	
+	$("#Tab").tabSwitch({
+		wrapper: "Tab",
+		showWhich: 4,
+		evtType: "mouseover",
+		switchCallBack: function() {
+			//alert("OK");
+		},
+		autoSwitch: true,
+		isFadeIn: true
+	});
+	$("#Tab1").tabSwitch({
+		evtType: "mouseover"
+	});
+	$("#Tab2").tabSwitch({
+		evtType: "mouseover",
+		showWhich: 3
+	});
+	$("#Tab3").tabSwitch({
+		evtType: "click",
+		showWhich: 2
+	});
+	
+	$("#img").tabSwitch({
+		wrapper: "img",
+		evtType: "mouseover",
+		autoSwitch: true,
+		btnSwitchClass: "holderCurr",
+		conSwitchClass: "imgCurr",
+		isFadeIn: true
+	});
+	
+});	
+	
+</script>
+</body>
+</html>
